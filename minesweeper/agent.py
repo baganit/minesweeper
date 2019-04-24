@@ -36,10 +36,35 @@ class Player:
         while True:
             way = random.randint(1, 4)
             # print(way)
+            print("tilemap:" + str(tilemap[playerPos[0]][playerPos[1]]))
 
+            if way == 1 and playerPos[0] < MAPWIDTH - 1:
+                if playerPos[0] < 15:
+                    if tilemap[playerPos[0] + 1][playerPos[1]] != 2:
+                        playerPos[0] += 1
+                        print(playerPos[0], playerPos[1])
+                        break
+            if way == 2 and playerPos[0] > 0:
+                if playerPos[0] < 15:
+                    if tilemap[playerPos[0] - 1][playerPos[1]] != 2:
+                        playerPos[0] -= 1
+                        print(playerPos[0], playerPos[1])
+                        break
+            if way == 3 and playerPos[1] < MAPHEIGHT - 1:
+                if playerPos[0] < 15:
+                    if tilemap[playerPos[0]][playerPos[1] + 1] != 2:
+                        playerPos[1] += 1
+                        print(playerPos[0], playerPos[1])
+                break
+            if way == 4 and playerPos[1] > 0:
+                if playerPos[0] < 15:
+                    if tilemap[playerPos[0]][playerPos[1] - 1] != 2:
+                        playerPos[1] -= 1
+                        print(playerPos[0], playerPos[1])
+                        break
 
 '''
-            if way == 1 and playerPos[0] < MAPWIDTH - 1 and tilemap[playerPos[0] + 1][playerPos[1]] != 2:
+            if way == 1 and playerPos[0] < MAPWIDTH - 1 and 
                 playerPos[0] += 1
                 print(playerPos[0], playerPos[1])
                 break
