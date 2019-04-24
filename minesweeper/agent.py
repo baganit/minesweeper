@@ -1,7 +1,7 @@
-import pygame as pg
 import random
 import sys
-from pygame.locals import *
+
+import pygame as pg
 
 
 class Player:
@@ -34,22 +34,25 @@ class Player:
                 pg.quit()
                 sys.exit()
         while True:
-            way = random.randint(0, 4)
-            # print(event)
+            way = random.randint(1, 4)
+            # print(way)
 
+
+'''
             if way == 1 and playerPos[0] < MAPWIDTH - 1 and tilemap[playerPos[0] + 1][playerPos[1]] != 2:
                 playerPos[0] += 1
                 print(playerPos[0], playerPos[1])
-                break;
+                break
             if way == 2 and playerPos[0] > 0 and tilemap[playerPos[0] - 1][playerPos[1]] != 2:
                 playerPos[0] -= 1
                 print(playerPos[0], playerPos[1])
-                break;
+                break
             if way == 3 and playerPos[1] < MAPHEIGHT - 1 and tilemap[playerPos[0]][playerPos[1] + 1] != 2:
                 playerPos[1] += 1
                 print(playerPos[0], playerPos[1])
-                break;
+                break
             if way == 4 and playerPos[1] > 0 and tilemap[playerPos[0]][playerPos[1] - 1] != 2:
                 playerPos[1] -= 1
                 print(playerPos[0], playerPos[1])
-                break;
+                break
+'''

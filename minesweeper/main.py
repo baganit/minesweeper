@@ -1,10 +1,8 @@
-import pygame as pg
 import random
-import sys
-from minesweeper import sprites
-from minesweeper.agent import Player
-from pygame.locals import *
 
+import pygame as pg
+
+from minesweeper.agent import Player
 
 # initializing PyGame module
 pg.init()
@@ -96,8 +94,7 @@ def generate_env():
             else:
                 tile = LANDMINE
             tilemap[rw][cl] = tile
-            tilemap[0][0] = GROUND()
-            print(tilemap[rw][cl] + str(rw) , " "+ cl)
+            tilemap[0][0] = GROUND
 
 
 
