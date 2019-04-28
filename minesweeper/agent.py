@@ -36,6 +36,7 @@ class Player:
         while True:
             way = random.randint(1, 4)
             # print(way)
+            pg.time.wait(200)
             print("tilemap:" + str(tilemap[playerPos[0]][playerPos[1]]))
 
             if way == 1 and playerPos[0] < MAPWIDTH - 1:

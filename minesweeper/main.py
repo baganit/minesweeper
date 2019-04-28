@@ -1,5 +1,3 @@
-import random
-
 import pygame as pg
 
 from minesweeper.agent import Player
@@ -8,32 +6,9 @@ from minesweeper.agent import Player
 pg.init()
 print('This is our intelligent sprite running through a minefield!')
 
-# display dimensions
-TILESIZE = 40
-MAPHEIGHT = 15
-MAPWIDTH = 15
 
-# colors
-WHITE = (255, 255, 255)
-BLACK = (0, 0, 0)
 
-# floors
-# accessible
-GROUND = 0
-LANDMINE = 1
-# not accessible
-OBSTACLE = 2
-floor = [GROUND, LANDMINE, OBSTACLE]
 
-# dictionary linking textures with floors
-textures = {
-    GROUND: pg.image.load('resources/ground.png'),
-    OBSTACLE: pg.image.load('resources/obstacle.png'),
-    LANDMINE: pg.image.load('resources/landmine.png')
-}
-
-# a list representing our tilemap
-tilemap = [[GROUND for w in range(MAPWIDTH)] for h in range(MAPHEIGHT)]
 
 # creating a new drawing surface
 SURFACE = pg.display.set_mode((TILESIZE*MAPWIDTH, TILESIZE*MAPHEIGHT + 50))
@@ -82,32 +57,12 @@ PLAYER = pg.image.load("resources/agent.png").convert_alpha()
 player = Player()
 
 
-def generate_env():
-    # randomly generated flooring
-    for rw in range(MAPHEIGHT):
-        for cl in range(MAPWIDTH):
-            num = random.randint(0, 15)
-            if num < 10:
-                tile = GROUND
-            elif 10 <= num < 13:
-                tile = OBSTACLE
-            else:
-                tile = LANDMINE
-            tilemap[rw][cl] = tile
-            tilemap[0][0] = GROUND
-
-
-
 def main():
     # game loop
     while True:
         clock.tick(120)
         timer = pg.time.get_ticks()
         # print(timer)
-
-
-
-
 
         for row in range(MAPHEIGHT):
             for column in range(MAPWIDTH):
